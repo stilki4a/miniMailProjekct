@@ -39,7 +39,7 @@
         $email = mysqli_real_escape_string($linkKumBazata,$_POST['userEmail']);
         $statuS = mysqli_real_escape_string($linkKumBazata,$_POST['stat']);
 
-
+        
 
         $zapis = "INSERT INTO users(id_user,name,email,status,snimkaLink)
                 VALUES (null,'$name','$email','$statuS','$snimka')";
