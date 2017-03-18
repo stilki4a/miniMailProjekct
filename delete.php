@@ -15,7 +15,7 @@
             $trieme = mysqli_query($linkKumBazata,
                 "DELETE
                     FROM users
-                    WHERE id_user='$id'
+                    WHERE user_id='$id'
                     ");
             header('Location:index.php',true,302);
 

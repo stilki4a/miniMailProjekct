@@ -14,7 +14,7 @@ if (isset($_GET['name'])) {
     $izvlichame = mysqli_query($linkKumBazata,
                     "SELECT *
                     FROM users
-                    WHERE id_user='$id'
+                    WHERE user_id='$id'
                     ");
 
 //    while ($row = mysqli_fetch_array($izvlichame)) {
@@ -29,9 +29,9 @@ if (isset($_GET['name'])) {
 
 //        echo "<img src='$row[snimkaLink]'alt=''>";
 //        echo "<h2>$row[name]</h2>";
-        $ime = $row['name'];
-        $email = $row['email'];
-        $status = $row['status'];
+        $ime = $row['user_name'];
+        $email = $row['user_email'];
+        $status = $row['user_status'];
         $snimka=$row['snimkaLink'];
 
     }
