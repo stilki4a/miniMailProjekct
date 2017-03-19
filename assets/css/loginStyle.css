@@ -74,6 +74,8 @@ form  div {
     background-color:#522985;
     color:#FBEAFF;
 	
-    
+ } 
 	
-}
+	#exist{
+	color:red;
+	}

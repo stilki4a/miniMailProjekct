@@ -37,6 +37,8 @@ while ($row = mysqli_fetch_array($izvlichame)){
 
 }
 
+
+
 ?>
 	</div>
 </body>

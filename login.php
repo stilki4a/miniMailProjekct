@@ -1,6 +1,7 @@
 <?php
-
+	$exist="";
     if (isset($_POST['submit'])){
+    	
 
         $existingMail=false;
 
@@ -43,13 +44,22 @@
                 FROM users');
         
         while ($row = mysqli_fetch_array($selectmail)) {
-        
-//        	if( "$row[user_email] " === $email) {
-//                $existingMail = true;
-//                break;
-//            }
-        var_dump($row[user_email]);
-//        if(!$existingMail) {
+        	$emailArr[]="$row[user_email]";
+        	}
+	       
+	       
+	       	for($index=0; $index < count($emailArr); $index++ ){
+	       		if($emailArr[$index] == $email){
+	       			$existingMail = true;
+	                break;
+	       			
+	       		}
+	       	}
+
+       
+        if($existingMail) {
+        	$exist= "Вече съществува такъв имейл!";
+        }else{
             $name = mysqli_real_escape_string($linkKumBazata, $_POST['userName']);
             $email = mysqli_real_escape_string($linkKumBazata, $_POST['userEmail']);
             $statuS = mysqli_real_escape_string($linkKumBazata, $_POST['stat']);
@@ -62,11 +72,9 @@
             $query = mysqli_query($linkKumBazata, $zapis);
 
             header('Location:./index.php', true, 302);
-//        }else{
-//        	    echo "Вече съществува такъв имейл!";
+        
              }
-        }
-//    }
+  }
 
 
 ?>
@@ -113,6 +121,9 @@
 	        </div>
         <div id="zap">
             <input type="submit" id="submit" name="submit" value="Запиши" >
+        </div>
+        <div id="exist">
+        <?=$exist?>
         </div>
     </form>
 </div>
