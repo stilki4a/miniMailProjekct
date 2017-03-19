@@ -23,23 +23,17 @@ while ($row = mysqli_fetch_array($izvlichame)){
     echo "<div class='profile'>";
 
     echo " <a href='./sendMail.php?name=$row[user_id]'>";
-    echo"<h2>$row[user_name]</h2>";
     echo"<img src='$row[snimkaLink]'alt=''>";
+    echo"<h2>$row[user_name]</h2>";
     echo " </a>";
 
-           echo " <form action='./delete.php' method='post' id='dell'>
+           echo " <div id='dell'><form action='./delete.php' method='post'>
                 <button name='delete' id='delete' value='$row[user_id]'><img src='./assets/images/delete.png' alt=''></button>
-            </form>";
+            </form></div>";
     echo "</div>";
-}
 
 
-$selectmail = mysqli_query($linkKumBazata,'SELECT user_email
-                FROM users');
 
-while ($row = mysqli_fetch_array($selectmail)) {
-
-    echo "$row[user_email] ";
 
 }
 

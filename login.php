@@ -1,5 +1,8 @@
 <?php
+
     if (isset($_POST['submit'])){
+
+        $existingMail=false;
 
         $name = htmlentities(trim($_POST['userName']));
         $email =htmlentities(trim($_POST['userEmail']));
@@ -14,12 +17,13 @@
                 if (move_uploaded_file($fileOnServerName,
                     "./dir/$fileOriginalName")) {
                     echo "Успешно качихте симката! ";
-                } else {
-                    echo "Нещо се обърка! Опитайте пак!";
                 }
-            }
-            else {
-                echo "Нещо се обърка! Опитайте пак!";
+//                else {
+//                    echo "Нещо се обърка! Опитайте пак!";
+//                }
+//            }
+//            else {
+//                echo "Нещо се обърка! Опитайте пак!";
             }
         }
 
@@ -40,26 +44,30 @@
         
         while ($row = mysqli_fetch_array($selectmail)) {
         
-        	if( "$row[user_email] " == $email){
-        		echo "Такъв имейл вече съществува!";
-        	}else{
+//        	if( "$row[user_email] " === $email) {
+//                $existingMail = true;
+//                break;
+//            }
+        var_dump($row[user_email]);
+//        if(!$existingMail) {
+            $name = mysqli_real_escape_string($linkKumBazata, $_POST['userName']);
+            $email = mysqli_real_escape_string($linkKumBazata, $_POST['userEmail']);
+            $statuS = mysqli_real_escape_string($linkKumBazata, $_POST['stat']);
 
 
-		        $name =  mysqli_real_escape_string($linkKumBazata,$_POST['userName']);
-		        $email = mysqli_real_escape_string($linkKumBazata,$_POST['userEmail']);
-		        $statuS = mysqli_real_escape_string($linkKumBazata,$_POST['stat']);
-		
-		
-		        $zapis = "INSERT INTO users(user_id,user_name,user_email,user_status,snimkaLink)
+            $zapis = "INSERT INTO users(user_id,user_name,user_email,user_status,snimkaLink)
 		                VALUES (null,'$name','$email','$statuS','$snimka')";
-		
-		
-		        $query =  mysqli_query($linkKumBazata,$zapis);
-		
-		        header('Location:./index.php',true,302);
-		    }
+
+
+            $query = mysqli_query($linkKumBazata, $zapis);
+
+            header('Location:./index.php', true, 302);
+//        }else{
+//        	    echo "Вече съществува такъв имейл!";
+             }
         }
-    }
+//    }
+
 
 ?>
 
