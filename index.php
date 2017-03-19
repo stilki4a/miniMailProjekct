@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_array($izvlichame)){
     echo " </a>";
 
            echo " <form action='./delete.php' method='post'>
-                <button name='delete' value='$row[user_id]'>Изтрий</button>
+                <button name='delete' value='$row[user_id]'><img src='./assets/images/delete.png' alt=''></button>
             </form>";
     echo "</div>";
 }

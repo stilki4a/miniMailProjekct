@@ -17,26 +17,17 @@ if (isset($_GET['name'])) {
                     WHERE user_id='$id'
                     ");
 
-//    while ($row = mysqli_fetch_array($izvlichame)) {
-//        echo "<div >";
-//       echo "<h2>$row[name]</h2>";
-//        echo "<img src='$row[snimkaLink]'alt=''>";
-//       echo " </a>";echo "</div>";
-//   }
 
     while ($row = mysqli_fetch_array($izvlichame)) {
 
 
-//        echo "<img src='$row[snimkaLink]'alt=''>";
-//        echo "<h2>$row[name]</h2>";
+
         $ime = $row['user_name'];
         $email = $row['user_email'];
         $status = $row['user_status'];
         $snimka=$row['snimkaLink'];
 
     }
-//    echo $ime."<br/>".$email."<br/>".$status."<br/>"."<img src=\"$snimka\" alt=\"\">";
-
 }
 ?>
 <!doctype html>
