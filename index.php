@@ -10,6 +10,7 @@
 </head>
 <body>
 	<div id="wrrap">
+		<h1>Сурат Тефтер</h1>
 <?php
 $linkKumBazata=mysqli_connect("localhost","root","");
 mysqli_select_db($linkKumBazata,"mejdbaza");
