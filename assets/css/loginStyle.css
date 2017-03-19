@@ -79,3 +79,8 @@ form  div {
 #exist{
 	color:red;
 	}
+input#img.pole {
+    border: black;
+    width: 100px;
+    height: 20px;
+}
