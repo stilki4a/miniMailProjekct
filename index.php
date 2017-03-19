@@ -1,9 +1,15 @@
-
-    <title>tupaci</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Surat Tefter</title>
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <button><a href="./login.php">ADD</a></button>
 
-
+</head>
+<body>
+	<div id="wrrap">
 <?php
 $linkKumBazata=mysqli_connect("localhost","root","");
 mysqli_select_db($linkKumBazata,"mejdbaza");
@@ -19,11 +25,13 @@ while ($row = mysqli_fetch_array($izvlichame)){
     echo"<h2>$row[user_name]</h2>";
     echo"<img src='$row[snimkaLink]'alt=''>";
     echo " </a>";
+
            echo " <form action='./delete.php' method='post'>
-                <button name='delete' value='$row[user_id]'>Мани го тоя/тая</button>
+                <button name='delete' value='$row[user_id]'>Изтрий</button>
             </form>";
     echo "</div>";
 }
+
 
 $selectmail =mysqli_query($linkKumBazata,'SELECT user_email
                 FROM users');
@@ -35,3 +43,5 @@ while ($row = mysqli_fetch_array($selectmail)) {
 }
 
 ?>
+	</div>
+</body>
