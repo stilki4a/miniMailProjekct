@@ -24,4 +24,14 @@ while ($row = mysqli_fetch_array($izvlichame)){
             </form>";
     echo "</div>";
 }
+
+$selectmail =mysqli_query($linkKumBazata,'SELECT user_email
+                FROM users');
+
+while ($row = mysqli_fetch_array($selectmail)) {
+
+    echo "$row[user_email] ";
+
+}
+
 ?>
