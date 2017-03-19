@@ -34,20 +34,31 @@
         if (!$linkKumBazata){
             echo "problem s bazata";
         }
+        
+        $selectmail = mysqli_query($linkKumBazata,'SELECT user_email
+                FROM users');
+        
+        while ($row = mysqli_fetch_array($selectmail)) {
+        
+        	if( "$row[user_email] " == $email){
+        		echo "Такъв имейл вече съществува!";
+        	}else{
 
 
-        $name =  mysqli_real_escape_string($linkKumBazata,$_POST['userName']);
-        $email = mysqli_real_escape_string($linkKumBazata,$_POST['userEmail']);
-        $statuS = mysqli_real_escape_string($linkKumBazata,$_POST['stat']);
-
-
-        $zapis = "INSERT INTO users(user_id,user_name,user_email,user_status,snimkaLink)
-                VALUES (null,'$name','$email','$statuS','$snimka')";
-
-
-        $query =  mysqli_query($linkKumBazata,$zapis);
-
-        header('Location:./index.php',true,302);
+		        $name =  mysqli_real_escape_string($linkKumBazata,$_POST['userName']);
+		        $email = mysqli_real_escape_string($linkKumBazata,$_POST['userEmail']);
+		        $statuS = mysqli_real_escape_string($linkKumBazata,$_POST['stat']);
+		
+		
+		        $zapis = "INSERT INTO users(user_id,user_name,user_email,user_status,snimkaLink)
+		                VALUES (null,'$name','$email','$statuS','$snimka')";
+		
+		
+		        $query =  mysqli_query($linkKumBazata,$zapis);
+		
+		        header('Location:./index.php',true,302);
+		    }
+        }
     }
 
 ?>
