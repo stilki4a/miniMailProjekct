@@ -43,8 +43,8 @@ if (isset($_GET['name'])) {
 <body>
     <div id="wrraper">
 
-        <input type="button" value="BACK" ONCLICK="history.back(-1)">
-        <h1>Свържете се с мен</h1>
+        <input type="button" value="BACK" ONCLICK="history.back(-1)" id="back">
+        <h1 id="men">Свържете се с мен</h1>
         <div id="infoUser">
              <div class="up">
                  <img src="<?=$snimka?>" alt="pik" >
@@ -59,23 +59,28 @@ if (isset($_GET['name'])) {
         <div id="mail">
                 <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
 
-
-                <label for="from"> ОТ: </label>
+			<div class="mess" >
+                <label for="from" class="label"> ОТ: </label>
                 <input type="text" name="from" id="from">
-                <br/>
-                <label for="to"> ДО: </label>
+              </div >
+              <div class="mess">
+                <label for="to" class="label"> ДО: </label>
                 <input type="text" name="to" id="to">
-                <br/>
-                <label for="subject"> Тема: </label>
+              </div>
+              <div class="mess">
+                <label for="subject" id="sub"> Тема: </label>
                 <input type="text" name="syb" id="subject">
-                    <br/>
-                <label for="message">Съобщение:</label>
-                    <textarea  name="message" id="message"></textarea>
-                <br/>
+              </div>
+              
+              
+                 <div class="mess">
+                    <textarea placeholder="СЪОБЩЕНИЕ" name="message" ></textarea>
+                    <div id="send">
+                	<input type="submit" id="upload" name="submit" value="ИЗПРАТИ" >
+				</div>
+                </div>
 
-                <br/>
-                <input type="submit" id="upload" name="submit" value="ИЗПРАТИ" >
-
+                
             </form>
         </div>
     </div>

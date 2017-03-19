@@ -1,4 +1,25 @@
 @charset "UTF-8";
+a{
+	text-decoration:none;
+	color:#4d0000;
+}
+#surat{
+    width: 100%;
+    box-sizing: border-box;
+    display:inline-block;
+}
+
+#add{
+	
+    width:10%;
+    box-sizing: border-box;
+    height:50px;
+   	float:left;
+    display:inline-block;
+    font-size:1.2em;
+    font-weight:bold;
+    margin:1.5em;
+}
 
 #wrrap{
 	box-sizing:border-box;
@@ -12,10 +33,16 @@
     background-size:cover;
 	
 }
+
 #wrrap h1{
 	text-align:center;
 	font-size:3em;
+	color:#4d0000;
+	width:80%;
+	
 }
+
+
 
 .profile {
     box-shadow: 20px 20px 80px 20px #7A9985;
@@ -27,7 +54,7 @@
 }
 
 
-.profile > a > img {
+.profile  img {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -35,23 +62,38 @@
     display:inline-block;
 
 }
-#dell{
+
+#link{
+	width:60%;
 	 box-sizing: border-box;
 	display:inline-block;
-	float:right;
-	width:100%;
+	float:left;
+	
 	paddinng:5px;
+	
+}
+#dell{
+	width:40%;
+	box-sizing: border-box;
+	display:inline-block;
+	height:100px;
+	padding:5em;
+}
+
+#delete {
+border:none;
+border-radius:30px;	
+float:right;
+	
 }
 
 #delete img{
 
-	width:40px;
-	height:40px;
-	border-radius:50%;
-    float: right;
-    display: inline-block;
-	
+	width:50px;
+	height:50px;
+
 }
+
 #wrraper{
     width: 1170px;
     margin:0 auto;
@@ -64,7 +106,8 @@
 }
 #wrraper h1{
     text-align:center;
-    color:#000066;
+    color:#660000;
+    font-size:2em;
 }
 #infoUser {
 
@@ -76,13 +119,14 @@
 }
 
 .up {
-    padding: 1em;
+    padding: 0.5em 1em ;
     box-sizing: border-box;
     width:50%;
     display: inline-block;
     float:left;
-    font-size:2em;
+    font-size:1.5em;
     font-weight:bold;
+    color:#660000;
 }
 
 
@@ -93,12 +137,47 @@
 }
 #mail {
     width: 100%;
-
+	 box-shadow: 20px 20px 80px 20px #7A9985;
     box-sizing: border-box;
-    padding:8px;
+    padding:1em;
 }
+.mess{
+	margin:1.5em; 
+	box-sizing: border-box;
+	
+}
+
+.label{
+	margin:0em 1em;
+}
+#sub{
+	margin:0em 0.5em;
+}
+
 textarea{
-    width:100%;
-    height:250px;
+    width:50%;
+    height:200px;
     display:inline-block;
+    margin:0,5em 2em;
+}
+#send{
+	width:30%;
+	float:right;
+	padding:5em;
+	display:inline-block;
+}
+#send input{
+	width:200px;
+	height:50px;
+	border-radius:30px;
+	box-shadow:10px 10px 30px 10px #990000;
+	
+}
+
+#back{
+	width:150px;
+	height:40px;
+	border-radius:30px;
+	box-shadow:5px 5px 30px 5px #990000;
+	
 }
