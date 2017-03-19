@@ -79,7 +79,7 @@ if (isset($_GET['name'])) {
                 <input type="text" name="syb" id="subject">
                     <br/>
                 <label for="message">Съобщение:</label>
-                    <textarea type="text" name="message" id="message"></textarea>
+                    <textarea  name="message" id="message"></textarea>
                 <br/>
 
 
@@ -93,3 +93,14 @@ if (isset($_GET['name'])) {
 
 </body>
 </html>
+<?php 
+
+if (isset($_POST['submit'])){
+	$to=($_POST['to']);
+	$headers="FROM:".($_POST['from'])."\r\n)";
+	$subject=($_POST['sub']);
+	$txt=($_POST['message']);
+	mail($to,$subject,$txt,$headers);
+}
+?>
+
