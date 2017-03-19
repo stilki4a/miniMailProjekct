@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($izvlichame)){
 }
 
 
-$selectmail =mysqli_query($linkKumBazata,'SELECT user_email
+$selectmail = mysqli_query($linkKumBazata,'SELECT user_email
                 FROM users');
 
 while ($row = mysqli_fetch_array($selectmail)) {
