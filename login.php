@@ -5,35 +5,43 @@
 
         $existingMail=false;
 
+
+    if (isset($_POST['submit'])) {
+        $existingMail = false;
+
+
         $name = htmlentities(trim($_POST['userName']));
-        $email =htmlentities(trim($_POST['userEmail']));
-        $statuS =htmlentities(trim($_POST['stat']));
+        $email = htmlentities(trim($_POST['userEmail']));
+        $statuS = htmlentities(trim($_POST['stat']));
+        if ((strlen($name) ===0) || (strlen($email) ===0) ){
+                $prazniDanni = "Моля попълнете полетата";
+        }else {
 
+            if (isset($_FILES['image'])) {
+                $fileOnServerName = $_FILES['image']['tmp_name'];
+                $fileOriginalName = $_FILES['image']['name'];
 
-        if (isset($_FILES['image'])) {
-            $fileOnServerName = $_FILES['image']['tmp_name'];
-            $fileOriginalName = $_FILES['image']['name'];
-
-            if (is_uploaded_file($fileOnServerName)) {
-                if (move_uploaded_file($fileOnServerName,
-                    "./dir/$fileOriginalName")) {
-                    echo "Успешно качихте симката! ";
-                }
+                if (is_uploaded_file($fileOnServerName)) {
+                    if (move_uploaded_file($fileOnServerName,
+                        "./dir/$fileOriginalName")) {
+                        echo "Успешно качихте симката! ";
+                    }
 //                else {
 //                    echo "Нещо се обърка! Опитайте пак!";
 //                }
 //            }
 //            else {
 //                echo "Нещо се обърка! Опитайте пак!";
+                }
             }
-        }
 
 
-        $snimka = "./dir/$fileOriginalName";
+            $snimka = "./dir/$fileOriginalName";
 
 
-        $linkKumBazata = mysqli_connect("localhost","root","");
-        $baza =mysqli_select_db($linkKumBazata,"mejdbaza");
+            $linkKumBazata = mysqli_connect("localhost", "root", "");
+            $baza = mysqli_select_db($linkKumBazata, "mejdbaza");
+
 
 
         if (!$linkKumBazata){
@@ -64,6 +72,22 @@
             $email = mysqli_real_escape_string($linkKumBazata, $_POST['userEmail']);
             $statuS = mysqli_real_escape_string($linkKumBazata, $_POST['stat']);
 
+            if (!$linkKumBazata) {
+                echo "problem s bazata";
+            }
+
+            $selectmail = mysqli_query($linkKumBazata, 'SELECT user_email FROM users');
+
+//        var_dump($row['user_email']);
+
+            while ($row = mysqli_fetch_array($selectmail)) {
+
+
+                $name = mysqli_real_escape_string($linkKumBazata, $_POST['userName']);
+                $email = mysqli_real_escape_string($linkKumBazata, $_POST['userEmail']);
+                $statuS = mysqli_real_escape_string($linkKumBazata, $_POST['stat']);
+
+            }
 
             $zapis = "INSERT INTO users(user_id,user_name,user_email,user_status,snimkaLink)
 		                VALUES (null,'$name','$email','$statuS','$snimka')";
@@ -72,11 +96,15 @@
             $query = mysqli_query($linkKumBazata, $zapis);
 
             header('Location:./index.php', true, 302);
+
         
              }
   }
 
 
+
+        }
+    }
 ?>
 
 
@@ -104,10 +132,11 @@
 	    <div class="pole">
 	        <label for="userEmail">Email:</label><br/>
         	<input type="email" name="userEmail" id="userEmail" class="pole">
+            <span><?= $prazniDanni; ?></span>
 	    </div>
 	    <div class="pole">
 	        <label for="img">Снимки:</label><br/>
-	        <input name="image" id="img" type="file"  accept="image/*" class="pole" />
+	        <input name="image" id="img" type="file"  accept="image/*" class="pole"/>
 	        <input type='hidden' name='MAX_FILE_SIZE' value='8000000' />
         </div>
         <div class="pole">
