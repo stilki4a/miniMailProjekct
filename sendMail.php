@@ -73,8 +73,6 @@ if (isset($_GET['name'])) {
                     <textarea  name="message" id="message"></textarea>
                 <br/>
 
-
-
                 <br/>
                 <input type="submit" id="upload" name="submit" value="ИЗПРАТИ" >
 

@@ -1,5 +1,6 @@
 <?php
 	$exist="";
+	$prazniDanni="";
     if (isset($_POST['submit'])){
     	
 
