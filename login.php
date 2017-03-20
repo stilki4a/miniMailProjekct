@@ -48,7 +48,9 @@
         if (!$linkKumBazata){
             echo "problem s bazata";
         }
-        
+
+        mysqli_set_charset($linkKumBazata,"UTF8");
+
         $selectmail = mysqli_query($linkKumBazata,'SELECT user_email
                 FROM users');
         
