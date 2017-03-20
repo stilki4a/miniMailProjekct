@@ -42,14 +42,16 @@ if (isset($_GET['name'])) {
 </head>
 <body>
     <div id="wrraper">
+    	<div id="topmail">
 
-        <input type="button" value="BACK" ONCLICK="history.back(-1)" id="back">
-        <h1 id="men">Свържете се с мен</h1>
+	        <input type="button" value="НАЗАД" ONCLICK="history.back(-1)" id="back">
+	        <h1 id="men">Свържете се с мен</h1>
+        </div>
         <div id="infoUser">
              <div class="up">
                  <img src="<?=$snimka?>" alt="pik" >
              </div>
-             <div class="up">
+             <div  id="rows">
               <p>Име: <?=$ime?></p>
                 <p>Статус: <?=$status?></p>
                <p>Имейл: <?=$email?></p>

@@ -47,7 +47,7 @@ a{
 
 
 
-.profile {
+#profile {
     box-shadow: 20px 20px 80px 20px #7A9985;
     width: 100%;
     box-sizing: border-box;
@@ -57,7 +57,7 @@ a{
 }
 
 
-.profile  img {
+#profile  img {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -110,7 +110,9 @@ float:right;
 #wrraper h1{
     text-align:center;
     color:#660000;
-    font-size:2em;
+    font-size:2.5em;
+    width:55%;
+    float:left;
 }
 #infoUser {
 
@@ -122,14 +124,30 @@ float:right;
 }
 
 .up {
-    padding: 0.5em 1em ;
+   
     box-sizing: border-box;
-    width:50%;
+    width:40%;
     display: inline-block;
     float:left;
     font-size:1.5em;
     font-weight:bold;
     color:#660000;
+}
+#rows{
+	padding-top:2em;
+	padding-left:1em;
+	 box-shadow: 20px 20px 80px 20px #7A9985;
+	  box-sizing: border-box;
+    width:50%;
+    height:300px;
+    display: inline-block;
+    float:left;
+    font-size:1.5em;
+    font-weight:bold;
+    color:#660000;
+    border-radius:30px;
+	 
+	
 }
 
 
@@ -137,12 +155,14 @@ float:right;
     width:250px;
     height:300px;
     border-radius: 30%;
+    margin-bottom:1em;
 }
 #mail {
     width: 100%;
 	 box-shadow: 20px 20px 80px 20px #7A9985;
     box-sizing: border-box;
     padding:1em;
+     border-radius:30px;
 }
 .mess{
 	margin:1.5em; 
@@ -174,13 +194,18 @@ textarea{
 	height:50px;
 	border-radius:30px;
 	box-shadow:10px 10px 30px 10px #990000;
+	font-weight:bold;
 	
 }
 
 #back{
+	
+	margin:0.5em 4.2em;;
 	width:150px;
 	height:40px;
 	border-radius:30px;
 	box-shadow:5px 5px 30px 5px #990000;
+	float:left;
+	font-weight:bold;
 	
 }

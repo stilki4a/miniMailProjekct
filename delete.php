@@ -3,7 +3,7 @@
 
 
             $id = ($_REQUEST['delete']);
-            echo $id;
+           
 
             $ime = "";
             $email = "";
@@ -17,7 +17,7 @@
                     FROM users
                     WHERE user_id='$id'
                     ");
-            header('Location:index.php',true,302);
+            //header('Location:index.php',true,302);
 
 
     }
