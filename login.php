@@ -146,7 +146,7 @@
 	        <label for="status">Семейно положение:</label>
 	        <select id="status" name="stat" class="pole">
 	            <option value="Щастливо сам/а">Щастливо сам/а</option>
-	            <option value="За жалост стар/а">За жалост стар/а</option>
+	            <option value="За жалост стар/а">За  жалост стар/а</option>
 	            <option value="Бракуван/а">Бракуван/а</option>
 	            <option value="Първа младост">Първа младост</option>
 	        </select>
